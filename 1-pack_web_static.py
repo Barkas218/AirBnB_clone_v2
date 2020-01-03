@@ -2,6 +2,7 @@
 from fabric.api import local
 from datetime import datetime
 
+
 def do_pack():
     """ Creats a trgz archive """
     time = datetime.now()
@@ -10,4 +11,4 @@ def do_pack():
                                             time.hour, time.minute,
                                             time.second)
     local("mkdir -p versions")
-    local("tar -cavf versions/{} {}".format(file_name, "web_static")
+    local("tar -cavf versions/{} {}".format(file_name, "web_static"))
