@@ -38,10 +38,10 @@ ln -fsn /data/web_static/releases/test/ /data/web_static/current
 chown -R ubuntu. /data/
 
 # Update the Nginx configuration to serve the content of /data/web_static/current/ to hbnb_static
-sed -i "36i location /hbnb_static/ {" /etc/nginx/sites-available/default
-sed -i "37i alias /data/web_static/current/;" /etc/nginx/sites-available/default
-sed -i "38i autoindex off;" /etc/nginx/sites-available/default
-sed -i "39i }" /etc/nginx/sites-available/default
+sed -i "36i location /hbnb_static/ {" /etc/nginx/sites-enabled/default
+sed -i "37i alias /data/web_static/current/;" /etc/nginx/sites-enabled/default
+sed -i "38i autoindex off;" /etc/nginx/sites-enabled/default
+sed -i "39i }" /etc/nginx/sites-enabled/default
 
 # restart nginx
 service nginx restart
