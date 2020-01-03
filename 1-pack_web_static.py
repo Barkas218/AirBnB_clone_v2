@@ -7,8 +7,8 @@ def do_pack():
     """ Creats a trgz archive """
     time = datetime.now()
     file_name = "{}_{}{}{}{}{}{}.tgz".format("web_static", time.year,
-                                            time.month, time.day,
-                                            time.hour, time.minute,
-                                            time.second)
+                                             time.month, time.day,
+                                             time.hour, time.minute,
+                                             time.second)
     local("mkdir -p versions")
     local("tar -cavf versions/{} {}".format(file_name, "web_static"))
