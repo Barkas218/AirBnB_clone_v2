@@ -21,7 +21,7 @@ mkdir -p /data/web_static/shared/
 mkdir -p /data/web_static/releases/test/
 
 # Create a fake HTML file
-touch /data/web_static/current/index.html
+touch /data/web_static/releases/test/index.html
 echo "
 <head>
 </head>
@@ -29,7 +29,7 @@ echo "
     Holberton School Test
 </body>
 </html>
-" > /data/web_static/current/index.html
+" > /data/web_static/releases/test/index.html
 
 # Create a symbolic link /data/web_static/current linked to the /data/web_static/releases/test/ folder.
 ln -fsn /data/web_static/releases/test/ /data/web_static/current
@@ -39,7 +39,7 @@ chown -R ubuntu. /data/
 
 # Update the Nginx configuration to serve the content of /data/web_static/current/ to hbnb_static
 sed -i "36i location /hbnb_static/ {" /etc/nginx/sites-available/default
-sed -i "37i /data/web_static/current/;" /etc/nginx/sites-available/default
+sed -i "37i alias /data/web_static/current/;" /etc/nginx/sites-available/default
 sed -i "38i autoindex off;" /etc/nginx/sites-available/default
 sed -i "39i }" /etc/nginx/sites-available/default
 
