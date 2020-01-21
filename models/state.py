@@ -7,6 +7,7 @@ import models
 from os import environ
 from models.city import City
 
+
 class State(BaseModel, Base):
     """This is the class for State
     Attributes:
