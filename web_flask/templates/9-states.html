@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>HBNB</TITLE>
+    </HEAD>
+    <BODY>
+        {% for state in state_l.values()%}
+            {% if id == state.id %}
+                <H1>State: {{ state.name }}</H1>
+                <H3>Cities:</H3>
+                <UL>
+                    <LI>521a55f4-7d82-47d9-b54c-a76916479552: <B>Chicago</B></LI>
+            {% else %}
+                    <H1>Not found!</H1>
+            {% endif %}
+                </UL>
+        {% endfor %}
+
+
+    </BODY>
+</HTML>
