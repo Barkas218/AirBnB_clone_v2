@@ -12,10 +12,11 @@ def show_states_list():
     states_l = storage.all(State)
     return render_template('7-states_list.html', states_l=states_l)
 
-
-
-
 @app.teardown_appcontext
 def tear_down_db():
     """ Closes the sql session """
     storage.close()
+
+
+if __name__ == '__main__':
+    app.run()
