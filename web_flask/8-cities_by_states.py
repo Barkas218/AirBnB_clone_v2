@@ -6,7 +6,7 @@ from flask import render_template
 app = Flask(__name__)
 
 
-@app.route('/states_list', strict_slashes=False)
+@app.route('/cities_by_states', strict_slashes=False)
 def show_states_list():
     """ Gets states list """
     state_l = storage.all('State')
