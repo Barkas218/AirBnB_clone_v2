@@ -17,6 +17,7 @@ def show_states_id(id):
     """ Shows states id """
     state_l = storage.all('State')
     for state in state_l.values():
+        state_id = ''
         if id == state.id:
             state_id = state
 
