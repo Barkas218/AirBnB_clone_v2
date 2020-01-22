@@ -16,7 +16,11 @@ def show_states_list():
 def show_states_id(id):
     """ Shows states id """
     state_l = storage.all('State')
-    return render_template('9-states.html', id=id, state_l=state_l)
+    for state in state_l.values():
+        if id == state.id:
+            state_id = state
+
+    return render_template('9-states.html', state_l=state_l, state_id=state_id)
 
 @app.teardown_appcontext
 def tear_down_db(n):
