@@ -12,6 +12,7 @@ def show_states_list():
     state_l = storage.all('State')
     return render_template('7-states_list.html', state_l=state_l)
 
+
 @app.route('/states/<id>', strict_slashes=False)
 def show_states_id(id):
     """ Shows states id """
@@ -22,6 +23,7 @@ def show_states_id(id):
             state_id = state
 
     return render_template('9-states.html', state_l=state_l, state_id=state_id)
+
 
 @app.teardown_appcontext
 def tear_down_db(n):
