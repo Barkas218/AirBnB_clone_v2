@@ -18,9 +18,10 @@ def show_states_id(id):
     state_l = storage.all('State')
     return render_template('9-states.html', id=id, state_l=state_l)
 
-
-
 @app.teardown_appcontext
 def tear_down_db(n):
     """ Closes the sql session """
     storage.close()
+
+if __name__ == '__main__':
+    app.run()
